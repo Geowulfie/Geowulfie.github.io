@@ -56,7 +56,7 @@
 					</header>
 					<script> 
 						function ChangeVideo(x) {
-              				document.getElementById("link").src = links[x];
+              				document.getElementById("link").data = links[x];
 							document.getElementById("videoText").innerHTML = text[x]
           				}
 						var links = [], text = [], x = 0;
@@ -69,10 +69,9 @@
 						text[2] = "Ball Bounce";
 						text[3] = "Imperial City";
 					</script>
-						<div><p align="center"><iframe 
-							id="link" class="frame"
-							src="https://www.youtube.com/v/Vdv7C-p9IDw">
-						</iframe>
+						<div><p align="center">
+							<object data="https://www.youtube.com/v/Vdv7C-p9IDw"
+   							id= "link" class="frame"></object>
 						<p id = 'videoText'> Acorn </p></div>
 						</p>
 						<!-- <button type="button" onclick="ChangeVideo(1)">Next</button> -->
