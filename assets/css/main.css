@@ -2152,6 +2152,25 @@
 				-webkit-filter: blur(3px);
 			}
 
+		.index.click {
+			display: block;
+			width: 100%;
+			-webkit-transition: 0.5s;
+    		-moz-transition: 0.5s;
+    		-o-transition: 0.5s;
+    		-ms-transition: 0.5s;
+		}
+			.index.click img {
+				content: attr(title);
+				width: 100%;
+			}
+
+			.index.click:hover {
+				opacity: 0.5;
+    			filter: alpha(opacity=50);
+				-webkit-filter: blur(3px);
+			}
+
 		.image.round img {
 			border-radius: 100%;
 		}
