@@ -3122,6 +3122,14 @@
 			}
 		}
 
+		@media screen and (min-width: 1670px) {
+
+			.frame {
+				width: 1280px;
+				height: 720px;
+			}
+		}
+
 	#one .inner {
 		margin-bottom: 2em;
 	}
