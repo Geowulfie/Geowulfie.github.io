@@ -38,6 +38,7 @@
 					<li><a href="animation.html">Animation</a></li>
 					<li><a href="graphics.html">Graphics</a></li>
 					<li><a href="film.html">Film</a></li>
+					<li><a href="blog.html">Blog</a></li>
 					<li><a href="contact.html">About & Contact</a></li>
 				</ul>
 				<ul class="actions vertical">
@@ -50,57 +51,122 @@
 				<div class="inner">
 					<header class="align-center">
 						<h1>Graphics</h1>
-						<p>Please right click and select open in new tab if you wish to see full piece unobstructed</p>
+						<p>Click on a thumbnail to bring up video</p>
 					</header>
-					<script> 
-						function ChangePhoto(x) {
-              				document.getElementById("link").src = links[x];
-							document.getElementById("photoText").innerHTML = text[x]
-          				}
-						var links = [], text = [], x = 0;
-						links[0] = "images/AbbeyRoadGif.gif";
-						links[1] = "images/Islander.png";
-						links[2] = "images/Russell.png";
-						links[3] = "images/Cover.jpg";
-						links[4] = "images/Quidditch.jpg";
-						links[5] = "images/UnderwaterHand.jpg";
-						links[6] = "images/Kissbutt.png";
-						links[7] = "images/Pests.png";
-						text[0] = "Abbey Road — Gif walk cycle with inspiration from the cover of Abbey Road. All Rotoscoped, drawn in Photoshop.";
-						text[1] = "Islander Shirt — Shirt graphic for my fraternity's week long charity event. Made using Illustrator.";
-						text[2] = "Russell — Shirt graphic made for a Uniqlo/Pixar competition. Made using Illustrator.";
-						text[3] = "Cover — The cover for the Grand Marshal Week issue of The Polytechnic, the Rensselaer Polytechnic Institute's school newspaper. Made in Illustrator.";
-						text[4] = "NCAA Quidditch '14 — A spoof cover of a Quidditch game, parodying the NCAA Football series. Made using Photoshop and Illustrator.";
-						text[5] = "Sands of Time — Maya mental ray render touched up in Photoshop.";
-						text[6] = "Kiss Butt — Photographed on a Canon T4i, edited in Photoshop.";
-						text[7] = "Pests — Photographed on a Canon T4i, edited in Photoshop.";
-					</script>
-						<p align="center"><img id="link" class="photo" src="images/AbbeyRoadGif.gif"/>
-						<p id = 'photoText'> Abbey Road — Gif walk cycle with inspiration from the cover of Abbey Road. All Rotoscoped, drawn in Photoshop. </p>
-						</p>
-						<!-- <button type="button" onclick="ChangeVideo(1)">Next</button> -->
-						<div class="box alt">
-							<div class="row 50% uniform" align="center">
-								<div class="4u"><span class="image click"> <img src="images/AbbeyRoadIcon.jpg" alt="" onclick="ChangePhoto(0)" title="Abbey Road"/></span></div>
-								<div class="4u"><span class="image click"> <img src="images/IslanderIcon.jpg" alt="" onclick="ChangePhoto(1)"" title="Islander Shirt"/></span></div>
-								<div class="4u$"><span class="image click"> <img src="images/RussellIcon.jpg" alt="" onclick="ChangePhoto(2)"" title="Russell"/></span></div>
-								<!-- Break -->
-								<div class="4u"><span class="image click"> <img src="images/CoverIcon.jpg" alt="" onclick="ChangePhoto(3)"" title="Cover"/></span></div>
-								<div class="4u"><span class="image click"> <img src="images/QuidditchIcon.jpg" alt="" onclick="ChangePhoto(4)"" title="Quidditch"/></span></div>
-								<div class="4u$"><span class="image click"> <img src="images/UnderwaterHandIcon.jpg" alt="" onclick="ChangePhoto(5)"" title="Sands of Time"/></span></div>
-								<!-- Break -->
-								<div class="4u"><span class="image click"> <img src="images/KissbuttIcon.jpg" alt="" onclick="ChangePhoto(6)"" title="Kiss Butt"/></span></div>
-								<div class="4u"><span class="image click"> <img src="images/PestsIcon.jpg" alt="" onclick="ChangePhoto(7)"" title="Pests"/></span></div>
-								<div class="4u$"><span class="image fit"> <img src="images/Antigua.jpg" alt="" /></span></div>
+					<!-- Images used to open the lightbox -->
+					<div class="box alt">
+						<div class="row 50% uniform" align="center">
+							<div class="4u"><span class="image click"> <img src="images/AbbeyRoadIcon.jpg" alt="" onclick="openModal();currentSlide(1)" title="Abbey Road"/></span></div>
+							<div class="4u"><span class="image click"> <img src="images/IslanderIcon.jpg" alt="" onclick="openModal();currentSlide(2)" title="Islander Shirt"/></span></div>
+							<div class="4u$"><span class="image click"> <img src="images/RussellIcon.jpg" alt="" onclick="openModal();currentSlide(3)" title="Russell"/></span></div>
+							<!-- Break -->
+							<div class="4u"><span class="image click"> <img src="images/CoverIcon.jpg" alt="" onclick="openModal();currentSlide(4)" title="Cover"/></span></div>
+							<div class="4u"><span class="image click"> <img src="images/QuidditchIcon.jpg" alt="" onclick="openModal();currentSlide(5)" title="NCAA Quidditch"/></span></div>
+							<div class="4u$"><span class="image click"> <img src="images/UnderwaterHandIcon.jpg" alt="" onclick="openModal();currentSlide(6)" title="Burial at Sea"/></span></div>
+							<!-- Break -->
+							<div class="4u"><span class="image click"> <img src="images/KissbuttIcon.jpg" alt="" onclick="openModal();currentSlide(7)" title="Kiss Butt"/></span></div>
+							<div class="4u"><span class="image click"> <img src="images/PestsIcon.jpg" alt="" onclick="openModal();currentSlide(8)" title="Pests"/></span></div>
+							<div class="4u$"><span class="image click"> <img src="images/CalenderIcon.jpg" alt="" onclick="openModal();currentSlide(9)" title="Calender"/></span></div>
+						</div>
+					</div>
+
+					<!-- The Modal/Lightbox -->
+					<div id="myModal" class="modal">
+						<span class="close cursor" onclick="closeModal()">&times;</span>
+						<div class="modal-content">
+
+							<div class="mySlides">
+							<div class="numbertext">1 / 9</div>
+							<img src="images/AbbeyRoadGif.gif" style="width:100%">
+							</div>
+
+							<div class="mySlides">
+							<div class="numbertext">2 / 9</div>
+							<img src="images/Islander.png" style="width:100%">
+							</div>
+
+							<div class="mySlides">
+							<div class="numbertext">3 / 9</div>
+							<img src="images/Russell.png" style="width:100%">
+							</div>
+
+							<div class="mySlides">
+							<div class="numbertext">4 / 9</div>
+							<img src="images/Cover.jpg" style="width:100%">
+							</div>
+
+							<div class="mySlides">
+							<div class="numbertext">5 / 9</div>
+							<img src="images/Quidditch.jpg" style="width:100%">
+							</div>
+
+							<div class="mySlides">
+							<div class="numbertext">6 / 9</div>
+							<img src="images/UnderwaterHand.jpg" style="width:100%">
+							</div>
+
+							<div class="mySlides">
+							<div class="numbertext">7 / 9</div>
+							<img src="images/Kissbutt.png" style="width:100%">
+							</div>
+
+							<div class="mySlides">
+							<div class="numbertext">8 / 9</div>
+							<img src="images/Pests.png" style="width:100%">
+							</div>
+
+							<div class="mySlides">
+							<div class="numbertext">9 / 9</div>
+							<img src="images/Calender.png" style="width:100%">
+							</div>
+
+							<!-- Key Controls for modal navigation -->
+							<script>
+								document.addEventListener("keydown", function(event) {
+									if(event.keyCode == 37) { // left
+										plusSlides(-1);
+									}
+									else if(event.keyCode == 39) { // right
+										plusSlides(1);
+									}
+									else if(event.keyCode == 27) { // escape to close
+										closeModal();
+									}
+								});
+							</script>
+
+							<!-- Caption text -->
+							<div class="row">
+								<div class="4u 12u$(medium)">
+									<a class="prev" onclick="plusSlides(-1)">Previous</a>
+								</div>
+								<div class="4u 12u$(medium)">
+									<div class="caption-container">
+										<p id="caption"></p>
+									</div>
+								</div>
+								<div class="4u 12u$(medium)" style="margin-bottom: 10px">
+									<a class="next" onclick="plusSlides(1)">Next</a>
+								</div>
+							</div>							
+
+							<!-- Thumbnail image controls -->
+							<div class="box alt">
+								<div class="row 50% uniform" align="center">
+									<div class="4u"><span class="image click"> <img class= "demo" src="images/AbbeyRoadIcon.jpg" onclick="openModal();currentSlide(1)" title="Abbey Road" alt="Abbey Road — Gif walk cycle with inspiration from the cover of Abbey Road. All Rotoscoped, drawn in Photoshop." /></span></div>
+									<div class="4u"><span class="image click"> <img class= "demo" src="images/IslanderIcon.jpg" onclick="openModal();currentSlide(2)" title="Islander Shirt" alt="Islander Shirt — Shirt graphic for my fraternity's week long charity event. Made using Illustrator."/></span></div>
+									<div class="4u$"><span class="image click"> <img class= "demo" src="images/RussellIcon.jpg" onclick="openModal();currentSlide(3)" title="Russell" alt="Russell — Shirt graphic made for a Uniqlo/Pixar competition. Made using Illustrator."/></span></div>
+									<div class="4u"><span class="image click"> <img class= "demo" src="images/CoverIcon.jpg" onclick="openModal();currentSlide(4)" title="Cover" alt="Cover — The cover for the Grand Marshal Week issue of The Polytechnic, the Rensselaer Polytechnic Institute's school newspaper. Made in Illustrator."/></span></div>
+									<div class="4u"><span class="image click"> <img class= "demo" src="images/QuidditchIcon.jpg" onclick="openModal();currentSlide(5)" title="NCAA Quidditch" alt="NCAA Quidditch '14 — A spoof cover of a Quidditch game, parodying the NCAA Football series. Made using Photoshop and Illustrator."/></span></div>
+									<div class="4u$"><span class="image click"> <img class= "demo" src="images/UnderwaterHandIcon.jpg" onclick="openModal();currentSlide(6)" title="Burial at Sea" alt="Sands of Time — Maya mental ray render touched up in Photoshop."/></span></div>
+									<div class="4u"><span class="image click"> <img class= "demo" src="images/KissbuttIcon.jpg" onclick="openModal();currentSlide(7)" title="Kiss Butt" alt="Kiss Butt — Photographed on a Canon T4i, edited in Photoshop."/></span></div>
+									<div class="4u"><span class="image click"> <img class= "demo" src="images/PestsIcon.jpg" onclick="openModal();currentSlide(8)" title="Pests" alt="Pests — Photographed on a Canon T4i, edited in Photoshop."/></span></div>
+									<div class="4u$"><span class="image click"> <img class= "demo" src="images/CalenderIcon.jpg" onclick="openModal();currentSlide(9)" title="Calender" alt="Calender — The backpage graphic I made for a Rush calender for my fraternity. Uses a background image I took using a Canon T4i, various other images provided by myself and others, and edited using Illustrator and Photoshop"/></span></div>
+								</div>
 							</div>
 						</div>
-					<!--<div class="image fit">
-						<img src="images/pic05.jpg" alt="" />
 					</div>
-					<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
-					<p> Aenean iaculis, neque sed pretium egestas, nunc lacus tempus enim, nec tincidunt urna massa a libero. Aenean mattis bibendum est, a pharetra elit. Morbi commodo lectus quis blandit mattis. Cras pharetra quam quis tincidunt tempus. Donec a sem magna. Nullam purus purus, fermentum id lorem sit amet, porta elementum neque. Proin vulputate metus ac faucibus luctus.</p>
-					<p>Ut congue purus sed elit consectetur tempus. Duis convallis, quam quis pellentesque vestibulum, tellus arcu hendrerit ante, sed dictum felis nisl vitae magna. Integer et sapien a erat molestie tempor. Cras est odio, suscipit id porttitor id, mollis et ligula. Curabitur molestie mi molestie accumsan faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Integer porta malesuada pellentesque. Morbi imperdiet dictum velit, eu volutpat sem posuere non. Fusce ullamcorper gravida velit, sed sollicitudin libero iaculis id. Ut eu neque non odio fringilla faucibus nec quis neque. Quisque et nisi fermentum, tincidunt libero a, condimentum ligula. Quisque ultrices blandit lacinia. Nulla velit lorem, placerat nec eros ut, fermentum pharetra dolor. Maecenas arcu ipsum, mattis et suscipit sed, convallis nec lectus. Nulla facilisi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; </p>
-				</div>-->
+				</div>
 			</section>
 
 		<!-- Footer -->
@@ -108,8 +174,8 @@
 				<div class="inner">
 					<h2>Don't be a Stranger, Get In Touch</h2>
 					<ul class="actions">
-						<li><span class="icon fa-phone"></span> <a href="#">(203) 218-2923</a></li>
-						<li><span class="icon fa-envelope"></span> <a href="#">geoffhrosenthal@gmail.com</a></li>
+						<li><span class="icon fa-phone"></span> (203) 218-2923</a></li>
+						<li><span class="icon fa-envelope"></span> geoffhrosenthal@gmail.com</a></li>
 						<li><span class="icon fa-map-marker"></span> 82 3rd Street, Troy, NY 12180</li>
 					</ul>
 				</div>
@@ -124,6 +190,48 @@
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+				// Open the Modal
+				function openModal() {
+					document.getElementById('myModal').style.display = "block";
+				}
+
+				// Close the Modal
+				function closeModal() {
+					document.getElementById('myModal').style.display = "none";
+				}
+
+				var slideIndex = 1;
+				showSlides(slideIndex);
+
+				// Next/previous controls
+				function plusSlides(n) {
+					showSlides(slideIndex += n);
+				}
+
+				// Thumbnail image controls
+				function currentSlide(n) {
+					showSlides(slideIndex = n);
+				}
+
+				function showSlides(n) {
+					var i;
+					var slides = document.getElementsByClassName("mySlides");
+					var dots = document.getElementsByClassName("demo");
+					var captionText = document.getElementById("caption");
+					if (n > slides.length) {slideIndex = 1}
+					if (n < 1) {slideIndex = slides.length}
+					for (i = 0; i < slides.length; i++) {
+						slides[i].style.display = "none";
+					}
+					for (i = 0; i < dots.length; i++) {
+						dots[i].className = dots[i].className.replace(" active", "");
+					}
+					slides[slideIndex-1].style.display = "block";
+					dots[slideIndex-1].className += " active";
+					captionText.innerHTML = dots[slideIndex-1].alt;
+				}
+			</script>
 
 	</body>
 </html>

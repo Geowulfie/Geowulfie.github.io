@@ -38,6 +38,7 @@
 					<li><a href="animation.html">Animation</a></li>
 					<li><a href="graphics.html">Graphics</a></li>
 					<li><a href="film.html">Film</a></li>
+					<li><a href="blog.html">Blog</a></li>
 					<li><a href="contact.html">About & Contact</a></li>
 				</ul>
 				<ul class="actions vertical">
@@ -48,6 +49,103 @@
 		<!-- Main -->
 			<section id="main" class="wrapper">
 				<div class="inner">
+					<header class="align-center">
+						<h1>Film</h1>
+						<p>Click on a thumbnail to bring up video</p>
+					</header>
+
+					<!-- Images used to open the lightbox -->
+					<div class="box alt">
+						<div class="row 50% uniform" align="center">
+							<div class="4u"><span class="image click"> <img src="images/DeathIcon.jpg" alt="" onclick="openModal();currentSlide(1)" title="A Walk with Death"/></span></div>
+							<div class="4u"><span class="image click"> <img src="images/AssassinsCreedIcon.jpg" alt="" onclick="openModal();currentSlide(2)" title="Assassins Creed: Legacy"/></span></div>
+							<div class="4u$"><span class="image click"> <img src="images/CainIcon.jpg" alt="" onclick="openModal();currentSlide(3)" title="Cain"/></span></div>
+							<!-- Break -->
+							<div class="4u"><span class="image click"> <img src="images/NaziZombieIcon.jpg" alt="" onclick="openModal();currentSlide(4)" title="Nazi Zombies"/></span></div>
+							<div class="4u"><span class="image click"> <img src="images/SplitscreenIcon.jpg" alt="" onclick="openModal();currentSlide(5)" title="Split Screen"/></span></div>
+							<div class="4u$"><span class="image click"> <img src="images/FlipbookIcon.jpg" alt="" onclick="openModal();currentSlide(6)" title="Flip Book"/></span></div>
+						</div>
+					</div>
+
+					<!-- The Modal/Lightbox -->
+					<div id="myModal" class="modal">
+						<span class="close cursor" onclick="closeModal()">&times;</span>
+						<div class="modal-content">
+
+							<div class="mySlides">
+							<div class="numbertext">1 / 6</div>
+							<object data="https://www.youtube.com/v/cHQfICkabB4" id= "link" class="frame" style="width:100%"></object>
+							</div>
+
+							<div class="mySlides">
+							<div class="numbertext">2 / 6</div>
+							<object data="https://www.youtube.com/v/lxmIy6da7LU" id= "link" class="frame" style="width:100%"></object>
+							</div>
+
+							<div class="mySlides">
+							<div class="numbertext">3 / 6</div>
+							<object data="https://www.youtube.com/v/xWdeoMT82QE" id= "link" class="frame" style="width:100%"></object>
+							</div>
+
+							<div class="mySlides">
+							<div class="numbertext">4 / 6</div>
+							<object data="https://www.youtube.com/v/N3MUAJ_Xv2A" id= "link" class="frame" style="width:100%"></object>
+							</div>
+
+							<div class="mySlides">
+							<div class="numbertext">5 / 6</div>
+							<object data="https://www.youtube.com/v/0K7GeI89fbs" id= "link" class="frame" style="width:100%"></object>
+							</div>
+
+							<div class="mySlides">
+							<div class="numbertext">6 / 6</div>
+							<object data="https://www.youtube.com/v/3WEW2m1UEP4" id= "link" class="frame" style="width:100%"></object>
+							</div>
+
+							<!-- Key Controls for modal navigation -->
+							<script>
+								document.addEventListener("keydown", function(event) {
+									if(event.keyCode == 37) { // left
+										plusSlides(-1);
+									}
+									else if(event.keyCode == 39) { // right
+										plusSlides(1);
+									}
+									else if(event.keyCode == 27) { // escape to close
+										closeModal();
+									}
+								});
+							</script>
+
+							<!-- Caption text -->
+							<div class="row">
+								<div class="4u 12u$(medium)">
+									<a class="prev" onclick="plusSlides(-1)">Previous</a>
+								</div>
+								<div class="4u 12u$(medium)">
+									<div class="caption-container">
+										<p id="caption"></p>
+									</div>
+								</div>
+								<div class="4u 12u$(medium)" style="margin-bottom: 10px">
+									<a class="next" onclick="plusSlides(1)">Next</a>
+								</div>
+							</div>							
+
+							<!-- Thumbnail image controls -->
+							<div class="box alt">
+								<div class="row 50% uniform" align="center">
+									<div class="4u"><span class="image click"> <img class= "demo" src="images/DeathIcon.jpg" onclick="openModal();currentSlide(1)" title="A Walk with Death" alt="A Walk with Death — Civil War inspired film. Credits include writer and Best Boy." /></span></div>
+									<div class="4u"><span class="image click"> <img class= "demo" src="images/AssassinsCreedIcon.jpg" onclick="openModal();currentSlide(2)" title="Assassins Creed: Legacy" alt="Assassins Creed: Legacy — Trailer for a film based on the Assassins Creed franchise. Credits include writer and actor."/></span></div>
+									<div class="4u$"><span class="image click"> <img class= "demo" src="images/CainIcon.jpg" onclick="openModal();currentSlide(3)" title="Cain" alt="Cain — Short based in the Revolutionary War. Credited as an actor."/></span></div>
+									<div class="4u"><span class="image click"> <img class= "demo" src="images/NaziZombieIcon.jpg" onclick="openModal();currentSlide(4)" title="Nazi Zombies" alt="Nazi Zombies — Inspired by the Call of Duty mini-game. Credited as an actor."/></span></div>
+									<div class="4u"><span class="image click"> <img class= "demo" src="images/SplitscreenIcon.jpg" onclick="openModal();currentSlide(5)" title="Split Screen" alt="Split Screen — Music Video for film class made using the song &quotCome Into My Head&quot by Kimbra. Filmed by myself on a Canon T4i and also edited by myself in Premiere."/></span></div>
+									<div class="4u$"><span class="image click"> <img class= "demo" src="images/FlipbookIcon.jpg" onclick="openModal();currentSlide(6)" title="Flipbook" alt="Flipbook — A stop motion animation I made on index cards for an Animation class. Hand drawn in pencil and shot using a Canon T4i."/></span></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--
 					<header class="align-center">
 						<h1>Film</h1>
 					</header>
@@ -61,39 +159,35 @@
 						links[1] = "https://www.youtube.com/v/lxmIy6da7LU";
 						links[2] = "https://www.youtube.com/v/xWdeoMT82QE";
 						links[3] = "https://www.youtube.com/v/N3MUAJ_Xv2A";
+						4 "https://www.youtube.com/watch?v=0K7GeI89fbs"
+						5 "https://www.youtube.com/watch?v=3WEW2m1UEP4"
 						text[0] = "A Walk with Death — Civil War inspired film. Credits include writer and Best Boy.";
 						text[1] = "Assassins Creed: Legacy — Trailer for a film based on the Assassins Creed franchise. Credits include writer and actor.";
 						text[2] = "Cain — Short based in the Revolutionary War. Credited as an actor.";
 						text[3] = "Nazi Zombies — Inspired by the Call of Duty mini-game. Credited as an actor.";
+						4 "Split Screen — Music Video for film class made using the song /"Come Into My Head/" by Kimbra. Filmed by myself on a Canon T4i and also edited by myself in Premiere."
+						5 "Flipbook — A stop motion animation I made on index cards for an Animation class. Hand drawn in pencil and shot using a Canon T4i."
 					</script>
 						<div><p align="center">
 							<object data="https://www.youtube.com/v/cHQfICkabB4"
    							id= "link" class="frame"></object>
 						<p id = 'videoText'> A Walk with Death — Civil War inspired film. Credits include writer and Best Boy.</p></div>
 						</p>
-						<!-- <button type="button" onclick="ChangeVideo(1)">Next</button> -->
+						
 						<div class="box alt">
 							<div class="row 50% uniform" align="center">
 								<div class="4u"><span class="image click"> <img src="images/DeathIcon.jpg" alt="" onclick="ChangeVideo(0)" title="A Walk with Death"/></span></div>
 								<div class="4u"><span class="image click"> <img src="images/AssassinsCreedIcon.jpg" alt="" onclick="ChangeVideo(1)"" title="Assassins Creed"/></span></div>
 								<div class="4u$"><span class="image click"> <img src="images/NaziZombieIcon.jpg" alt="" onclick="ChangeVideo(2)"" title="Cain"/></span></div>
-								<!-- Break -->
 								<div class="4u"><span class="image click"> <img src="images/CainIcon.jpg" alt="" onclick="ChangeVideo(3)"" title="Nazi Zombies"/></span></div>
 								<div class="4u"><span class="image fit"> <img src="images/Antigua.jpg" alt="" /></span></div>
 								<div class="4u$"><span class="image fit"> <img src="images/Antigua.jpg" alt="" /></span></div>
-								<!-- Break -->
 								<div class="4u"><span class="image fit"> <img src="images/Antigua.jpg" alt="" /></span></div>
 								<div class="4u"><span class="image fit"> <img src="images/Antigua.jpg" alt="" /></span></div>
 								<div class="4u$"><span class="image fit"> <img src="images/Antigua.jpg" alt="" /></span></div>
 							</div>
-						</div>
-					<!--<div class="image fit">
-						<img src="images/pic05.jpg" alt="" />
-					</div>
-					<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
-					<p> Aenean iaculis, neque sed pretium egestas, nunc lacus tempus enim, nec tincidunt urna massa a libero. Aenean mattis bibendum est, a pharetra elit. Morbi commodo lectus quis blandit mattis. Cras pharetra quam quis tincidunt tempus. Donec a sem magna. Nullam purus purus, fermentum id lorem sit amet, porta elementum neque. Proin vulputate metus ac faucibus luctus.</p>
-					<p>Ut congue purus sed elit consectetur tempus. Duis convallis, quam quis pellentesque vestibulum, tellus arcu hendrerit ante, sed dictum felis nisl vitae magna. Integer et sapien a erat molestie tempor. Cras est odio, suscipit id porttitor id, mollis et ligula. Curabitur molestie mi molestie accumsan faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Integer porta malesuada pellentesque. Morbi imperdiet dictum velit, eu volutpat sem posuere non. Fusce ullamcorper gravida velit, sed sollicitudin libero iaculis id. Ut eu neque non odio fringilla faucibus nec quis neque. Quisque et nisi fermentum, tincidunt libero a, condimentum ligula. Quisque ultrices blandit lacinia. Nulla velit lorem, placerat nec eros ut, fermentum pharetra dolor. Maecenas arcu ipsum, mattis et suscipit sed, convallis nec lectus. Nulla facilisi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; </p>
-				</div>-->
+						</div> -->
+				</div>
 			</section>
 
 		<!-- Footer -->
@@ -101,8 +195,8 @@
 				<div class="inner">
 					<h2>Don't be a Stranger, Get In Touch</h2>
 					<ul class="actions">
-						<li><span class="icon fa-phone"></span> <a href="#">(203) 218-2923</a></li>
-						<li><span class="icon fa-envelope"></span> <a href="#">geoffhrosenthal@gmail.com</a></li>
+						<li><span class="icon fa-phone"></span> (203) 218-2923</li>
+						<li><span class="icon fa-envelope"></span> geoffhrosenthal@gmail.com</li>
 						<li><span class="icon fa-map-marker"></span> 82 3rd Street, Troy, NY 12180</li>
 					</ul>
 				</div>
@@ -117,6 +211,49 @@
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+				// Open the Modal
+				function openModal() {
+					document.getElementById('myModal').style.display = "block";
+				}
+
+				// Close the Modal
+				function closeModal() {
+					document.getElementById('myModal').style.display = "none";
+				}
+
+				var slideIndex = 1;
+				showSlides(slideIndex);
+
+				// Next/previous controls
+				function plusSlides(n) {
+					showSlides(slideIndex += n);
+				}
+
+				// Thumbnail image controls
+				function currentSlide(n) {
+					showSlides(slideIndex = n);
+				}
+
+				function showSlides(n) {
+					var i;
+					var slides = document.getElementsByClassName("mySlides");
+					var dots = document.getElementsByClassName("demo");
+					var captionText = document.getElementById("caption");
+					if (n > slides.length) {slideIndex = 1}
+					if (n < 1) {slideIndex = slides.length}
+					for (i = 0; i < slides.length; i++) {
+						slides[i].style.display = "none";
+					}
+					for (i = 0; i < dots.length; i++) {
+						dots[i].className = dots[i].className.replace(" active", "");
+					}
+					slides[slideIndex-1].style.display = "block";
+					dots[slideIndex-1].className += " active";
+					captionText.innerHTML = dots[slideIndex-1].alt;
+				}
+			</script>
+
 
 	</body>
 </html>

@@ -38,6 +38,7 @@
 					<li><a href="animation.html">Animation</a></li>
 					<li><a href="graphics.html">Graphics</a></li>
 					<li><a href="film.html">Film</a></li>
+					<li><a href="blog.html">Blog</a></li>
 					<li><a href="contact.html">About & Contact</a></li>
 				</ul>
 				<ul class="actions vertical">
@@ -50,63 +51,122 @@
 				<div class="inner">
 					<header class="align-center">
 						<h1>Animation</h1>
+						<p>Click on a thumbnail to bring up video</p>
 					</header>
-					<script> 
-						function ChangeVideo(x) {
-              				document.getElementById("link").data = links[x];
-							document.getElementById("videoText").innerHTML = text[x]
-          				}
-						var links = [], text = [], x = 0;
-						links[0] = "https://www.youtube.com/v/Vdv7C-p9IDw";
-						links[1] = "https://www.youtube.com/v/_ZREviVtdHA";
-						links[2] = "https://www.youtube.com/v/VJdRuYqSbCw";
-						links[3] = "https://www.youtube.com/v/DYiovcX9ai4";
-						links[4] = "https://www.youtube.com/v/SZ3AjYllU5E";
-						links[5] = "https://www.youtube.com/v/-s0DkSeswjw";
-						links[6] = "https://www.youtube.com/v/WP2HIpYUILI";
-						links[7] = "https://www.youtube.com/v/T7zTpPZS2S4";
-						links[8] = "https://www.youtube.com/v/r2YCfDPGKq4";
-						//"https://www.youtube.com/v/C0awL6_JK_A";
-						text[0] = "Acorn — Short made as a final project for 3D Projects class. Acorn was modeled, textured, rigged, and animated by myself. Full animation created using a blend of Maya, Mudbox, Photoshop, and Flash.";
-						text[1] = "Bond Villain Rube Goldberg Machine — Animation using Maya's Bullet Constraints and Dynamics to create a Rube Goldberg Machine.";
-						text[2] = "Vampire Costume Party — A short animation using dialogue from What We Do in the Shadows for the 11 Second Club's October competition. Animated in Maya.";
-						text[3] = "Tom Nook — Modeled, textured, and rigged by myself. The tail uses a squash deformer and the stomach has a jiggle deformer, adding more character to the test animation shown. Rendered in Renderman.";
-						text[4] = "Imperial City — Game of Thrones style intro of the capital of Cyrodiil from the game Oblivion. Done in Maya.";
-						text[5] = "Cigarette — A quick self challenge in which I wanted to emulate a person smoking a cigarette using only a dynamic texture and Maya 3D Fluids. Rendered in Renderman."
-						text[6] = "Dog — Freeware rig Cody animated in Maya, imported to Houdini with all other effects done in Houdini as well.";
-						text[7] = "Hoth — Short for Animation I final. Done in Maya."
-						text[8] = "Houdini — Flipbooks of various Houdini projects I've done. The first two are personal projects while the last is from in class work.";
-						//"Misfits 2D Fluid — A test of the 2D Fluid containers in Maya.";
-					</script>
-						<div><p align="center">
-							<object data="https://www.youtube.com/v/Vdv7C-p9IDw"
-   							id= "link" class="frame"></object>
-						<p id = 'videoText'> Acorn — Short made as a final project for 3D Projects class. Acorn was modeled, textured, rigged, and animated by myself. Full animation created using a blend of Maya, Mudbox, Photoshop, and Flash. </p>
+					<!-- Images used to open the lightbox -->
+					<div class="box alt">
+						<div class="row 50% uniform" align="center">
+							<div class="4u"><span class="image click"> <img src="images/Acorn.jpg" alt="" onclick="openModal();currentSlide(1)" title="Acorn"/></span></div>
+							<div class="4u"><span class="image click"> <img src="images/Goldberg.jpg" alt="" onclick="openModal();currentSlide(2)" title="Bond Villain Rube Goldberg"/></span></div>
+							<div class="4u$"><span class="image click"> <img src="images/Vampire.jpg" alt="" onclick="openModal();currentSlide(3)" title="Vampires"/></span></div>
+							<!-- Break -->
+							<div class="4u"><span class="image click"> <img src="images/TomNook.jpg" alt="" onclick="openModal();currentSlide(4)" title="Tom Nook"/></span></div>
+							<div class="4u"><span class="image click"> <img src="images/Imperial.jpg" alt="" onclick="openModal();currentSlide(5)" title="Imperial City"/></span></div>
+							<div class="4u$"><span class="image click"> <img src="images/cigarette.jpg" alt="" onclick="openModal();currentSlide(6)" title="Cigarette"/></span></div>
+							<!-- Break -->
+							<div class="4u"><span class="image click"> <img src="images/Dog.jpg" alt="" onclick="openModal();currentSlide(7)" title="Dog"/></span></div>
+							<div class="4u"><span class="image click"> <img src="images/Hoth.jpg" alt="" onclick="openModal();currentSlide(8)" title="Hoth"/></span></div>
+							<div class="4u$"><span class="image click"> <img src="images/houdini.jpg" alt="" onclick="openModal();currentSlide(9)" title="Houdini"/></span></div>
 						</div>
-						</p>
-						<!-- <button type="button" onclick="ChangeVideo(1)">Next</button> -->
-						<div class="box alt">
-							<div class="row 50% uniform" align="center">
-								<div class="4u"><span class="image click"> <img src="images/Acorn.jpg" alt="" onclick="ChangeVideo(0)" title="Acorn"/></span></div>
-								<div class="4u"><span class="image click"> <img src="images/Goldberg.jpg" alt="" onclick="ChangeVideo(1)"" title="Bond Villain Rube Goldberg"/></span></div>
-								<div class="4u$"><span class="image click"> <img src="images/Vampire.jpg" alt="" onclick="ChangeVideo(2)"" title="Vampires"/></span></div>
-								<!-- Break -->
-								<div class="4u"><span class="image click"> <img src="images/TomNook.jpg" alt="" onclick="ChangeVideo(3)"" title="Tom Nook"/></span></div>
-								<div class="4u"><span class="image click"> <img src="images/Imperial.jpg" alt="" onclick="ChangeVideo(4)"" title="Imperial City"/></span></div>
-								<div class="4u$"><span class="image click"> <img src="images/cigarette.jpg" alt="" onclick="ChangeVideo(5)"" title="Cigarette"/></span></div>
-								<!-- Break -->
-								<div class="4u"><span class="image click"> <img src="images/Dog.jpg" alt="" onclick="ChangeVideo(6)"" title="Dog"/></span></div>
-								<div class="4u"><span class="image click"> <img src="images/Hoth.jpg" alt="" onclick="ChangeVideo(7)"" title="Hoth"/></span></div>
-								<div class="4u$"><span class="image click"> <img src="images/houdini.jpg" alt="" onclick="ChangeVideo(8)"" title="Houdini"/></span></div>
+					</div>
+
+					<!-- The Modal/Lightbox -->
+					<div id="myModal" class="modal">
+						<span class="close cursor" onclick="closeModal()">&times;</span>
+						<div class="modal-content">
+
+							<div class="mySlides">
+							<div class="numbertext">1 / 9</div>
+							<object data="https://www.youtube.com/v/Vdv7C-p9IDw" id= "link" class="frame" style="width:100%"></object>
+							</div>
+
+							<div class="mySlides">
+							<div class="numbertext">2 / 9</div>
+							<object data="https://www.youtube.com/v/_ZREviVtdHA" id= "link" class="frame" style="width:100%"></object>
+							</div>
+
+							<div class="mySlides">
+							<div class="numbertext">3 / 9</div>
+							<object data="https://www.youtube.com/v/VJdRuYqSbCw" id= "link" class="frame" style="width:100%"></object>
+							</div>
+
+							<div class="mySlides">
+							<div class="numbertext">4 / 9</div>
+							<object data="https://www.youtube.com/v/DYiovcX9ai4" id= "link" class="frame" style="width:100%"></object>
+							</div>
+
+							<div class="mySlides">
+							<div class="numbertext">5 / 9</div>
+							<object data="https://www.youtube.com/v/SZ3AjYllU5E" id= "link" class="frame" style="width:100%"></object>
+							</div>
+
+							<div class="mySlides">
+							<div class="numbertext">6 / 9</div>
+							<object data="https://www.youtube.com/v/-s0DkSeswjw" id= "link" class="frame" style="width:100%"></object>
+							</div>
+
+							<div class="mySlides">
+							<div class="numbertext">7 / 9</div>
+							<object data="https://www.youtube.com/v/WP2HIpYUILI" id= "link" class="frame" style="width:100%"></object>
+							</div>
+
+							<div class="mySlides">
+							<div class="numbertext">8 / 9</div>
+							<object data="https://www.youtube.com/v/T7zTpPZS2S4" id= "link" class="frame" style="width:100%"></object>
+							</div>
+
+							<div class="mySlides">
+							<div class="numbertext">9 / 9</div>
+							<object data="https://www.youtube.com/v/r2YCfDPGKq4" id= "link" class="frame" style="width:100%"></object>
+							</div>
+
+							<!-- Key Controls for modal navigation -->
+							<script>
+								document.addEventListener("keydown", function(event) {
+									if(event.keyCode == 37) { // left
+										plusSlides(-1);
+									}
+									else if(event.keyCode == 39) { // right
+										plusSlides(1);
+									}
+									else if(event.keyCode == 27) { // escape to close
+										closeModal();
+									}
+								});
+							</script>
+
+							<!-- Caption text -->
+							<div class="row">
+								<div class="4u 12u$(medium)">
+									<a class="prev" onclick="plusSlides(-1)">Previous</a>
+								</div>
+								<div class="4u 12u$(medium)">
+									<div class="caption-container">
+										<p id="caption"></p>
+									</div>
+								</div>
+								<div class="4u 12u$(medium)" style="margin-bottom: 10px">
+									<a class="next" onclick="plusSlides(1)">Next</a>
+								</div>
+							</div>							
+
+							<!-- Thumbnail image controls -->
+							<div class="box alt">
+								<div class="row 50% uniform" align="center">
+									<div class="4u"><span class="image click"> <img class= "demo" src="images/Acorn.jpg" onclick="openModal();currentSlide(1)" title="Acorn" alt="Acorn — Short made as a final project for 3D Projects class. Acorn was modeled, textured, rigged, and animated by myself. Full animation created using a blend of Maya, Mudbox, Photoshop, and Flash." /></span></div>
+									<div class="4u"><span class="image click"> <img class= "demo" src="images/Goldberg.jpg" onclick="openModal();currentSlide(2)" title="Bond Villain Rube Goldberg" alt="Bond Villain Rube Goldberg Machine — Animation using Maya's Bullet Constraints and Dynamics to create a Rube Goldberg Machine."/></span></div>
+									<div class="4u$"><span class="image click"> <img class= "demo" src="images/Vampire.jpg" onclick="openModal();currentSlide(3)" title="Vampires" alt="Vampire Costume Party — A short animation using dialogue from What We Do in the Shadows for the 11 Second Club's October competition. Animated in Maya."/></span></div>
+									<div class="4u"><span class="image click"> <img class= "demo" src="images/TomNook.jpg" onclick="openModal();currentSlide(4)" title="Tom Nook" alt="Tom Nook — Modeled, textured, and rigged by myself. The tail uses a squash deformer and the stomach has a jiggle deformer, adding more character to the test animation shown. Rendered in Renderman."/></span></div>
+									<div class="4u"><span class="image click"> <img class= "demo" src="images/Imperial.jpg" onclick="openModal();currentSlide(5)" title="Imperial City" alt="Imperial City — Game of Thrones style intro of the capital of Cyrodiil from the game Oblivion. Done in Maya."/></span></div>
+									<div class="4u$"><span class="image click"> <img class= "demo" src="images/cigarette.jpg" onclick="openModal();currentSlide(6)" title="Cigarette" alt="Cigarette — A quick self challenge in which I wanted to emulate a person smoking a cigarette using only a dynamic texture and Maya 3D Fluids. Rendered in Renderman."/></span></div>
+									<div class="4u"><span class="image click"> <img class= "demo" src="images/Dog.jpg" onclick="openModal();currentSlide(7)" title="Dog" alt="Dog — Freeware rig Cody animated in Maya, imported to Houdini with all other effects done in Houdini as well."/></span></div>
+									<div class="4u"><span class="image click"> <img class= "demo" src="images/Hoth.jpg" onclick="openModal();currentSlide(8)" title="Hoth" alt="Hoth — Short for Animation I final. Done in Maya."/></span></div>
+									<div class="4u$"><span class="image click"> <img class= "demo" src="images/houdini.jpg" onclick="openModal();currentSlide(9)" title="Houdini" alt="Houdini — Flipbooks of various Houdini projects I've done. The first two are personal projects while the last is from in class work."/></span></div>
+								</div>
 							</div>
 						</div>
-					<!--<div class="image fit">
-						<img src="images/pic05.jpg" alt="" />
 					</div>
-					<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
-					<p> Aenean iaculis, neque sed pretium egestas, nunc lacus tempus enim, nec tincidunt urna massa a libero. Aenean mattis bibendum est, a pharetra elit. Morbi commodo lectus quis blandit mattis. Cras pharetra quam quis tincidunt tempus. Donec a sem magna. Nullam purus purus, fermentum id lorem sit amet, porta elementum neque. Proin vulputate metus ac faucibus luctus.</p>
-					<p>Ut congue purus sed elit consectetur tempus. Duis convallis, quam quis pellentesque vestibulum, tellus arcu hendrerit ante, sed dictum felis nisl vitae magna. Integer et sapien a erat molestie tempor. Cras est odio, suscipit id porttitor id, mollis et ligula. Curabitur molestie mi molestie accumsan faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Integer porta malesuada pellentesque. Morbi imperdiet dictum velit, eu volutpat sem posuere non. Fusce ullamcorper gravida velit, sed sollicitudin libero iaculis id. Ut eu neque non odio fringilla faucibus nec quis neque. Quisque et nisi fermentum, tincidunt libero a, condimentum ligula. Quisque ultrices blandit lacinia. Nulla velit lorem, placerat nec eros ut, fermentum pharetra dolor. Maecenas arcu ipsum, mattis et suscipit sed, convallis nec lectus. Nulla facilisi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; </p>
-				</div>-->
+				</div>
 			</section>
 
 		<!-- Footer -->
@@ -114,8 +174,8 @@
 				<div class="inner">
 					<h2>Don't be a Stranger, Get In Touch</h2>
 					<ul class="actions">
-						<li><span class="icon fa-phone"></span> <a href="#">(203) 218-2923</a></li>
-						<li><span class="icon fa-envelope"></span> <a href="#">geoffhrosenthal@gmail.com</a></li>
+						<li><span class="icon fa-phone"></span> (203) 218-2923</a></li>
+						<li><span class="icon fa-envelope"></span> geoffhrosenthal@gmail.com</a></li>
 						<li><span class="icon fa-map-marker"></span> 82 3rd Street, Troy, NY 12180</li>
 					</ul>
 				</div>
@@ -130,6 +190,48 @@
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+				// Open the Modal
+				function openModal() {
+					document.getElementById('myModal').style.display = "block";
+				}
+
+				// Close the Modal
+				function closeModal() {
+					document.getElementById('myModal').style.display = "none";
+				}
+
+				var slideIndex = 1;
+				showSlides(slideIndex);
+
+				// Next/previous controls
+				function plusSlides(n) {
+					showSlides(slideIndex += n);
+				}
+
+				// Thumbnail image controls
+				function currentSlide(n) {
+					showSlides(slideIndex = n);
+				}
+
+				function showSlides(n) {
+					var i;
+					var slides = document.getElementsByClassName("mySlides");
+					var dots = document.getElementsByClassName("demo");
+					var captionText = document.getElementById("caption");
+					if (n > slides.length) {slideIndex = 1}
+					if (n < 1) {slideIndex = slides.length}
+					for (i = 0; i < slides.length; i++) {
+						slides[i].style.display = "none";
+					}
+					for (i = 0; i < dots.length; i++) {
+						dots[i].className = dots[i].className.replace(" active", "");
+					}
+					slides[slideIndex-1].style.display = "block";
+					dots[slideIndex-1].className += " active";
+					captionText.innerHTML = dots[slideIndex-1].alt;
+				}
+			</script>
 
 	</body>
 </html>

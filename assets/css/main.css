@@ -11,7 +11,7 @@
 
 /* Reset */
 
-	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, imagequote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
 		margin: 0;
 		padding: 0;
 		border: 0;
@@ -41,9 +41,25 @@
 		content: none;
 	}
 
+	imagequote {
+		vertical-align: text-top;
+		padding-left: 2em;
+    	padding-bottom: 0.5em;
+    	padding-top: 0.1em;
+		content: '';
+		content: none;
+	}
+
 	table {
 		border-collapse: collapse;
 		border-spacing: 0;
+	} 
+
+	sidebar {
+		position: absolute;
+		top:0; bottom:0; left:0;
+    	width:50px;
+    	background:#666;
 	}
 
 	body {
@@ -460,7 +476,7 @@
 	}
 
 	.\-4u {
-		margin-left: 33.33333%;
+		margin-left: 11.11111%;
 	}
 
 	.\-3u {
@@ -1734,9 +1750,46 @@
 		top: -0.5em;
 	}
 
+	art, author, date {
+		line-height: 1.5;
+	}
+
+	art {
+		font-family: "Montserrat", sans-serif;
+		font-size: 1.25em;
+		color: #25a2c3;
+		font-weight: 700;
+		line-height: .5;
+		margin: 0 0 1em 0;
+	}
+
+	author {
+		font-family: "Open Sans", Arial, Helvetica, sans-serif;
+		font-size: 1.1em;
+		color: #727a82;
+		font-weight: 400;
+		margin: 0 0 1em 0;
+	}
+
+	date {
+		font-family: "Montserrat", sans-serif;
+		font-size: 0.7em;
+		color: #727a82;
+		font-weight: 700;
+		line-height: .5;
+		margin: 0 0 1em 2em;
+	}
+
 	blockquote {
+		text-align: center;
 		font-style: italic;
 		margin: 0 0 2em 0;
+	}
+
+	imagequote {
+		font-style: italic;
+		font-size: 1em;
+		margin: 0 0 4em 0;
 	}
 
 	cite {
@@ -2131,6 +2184,12 @@
 				width: 100%;
 			}
 
+		.image.fit.quote {
+			display: block;
+			margin: 0 0 0 0;
+			width: 100%;
+		}
+
 		.image.click {
 			display: block;
 			margin: 0 0 2em 0;
@@ -2146,11 +2205,11 @@
 				width: 100%;
 			}
 
-			.image.click:hover {
+			/*.image.click:hover {
 				opacity: 0.5;
     			filter: alpha(opacity=50);
 				-webkit-filter: blur(3px);
-			}
+			}*/
 
 		.index.click {
 			display: block;
@@ -3225,12 +3284,22 @@
 				max-width: 60%;
 			}
 
+			#one .image.fit.quote {
+				margin: 0 auto 0 auto;
+				max-width: 60%;
+			}
+
 		}
 
 		@media screen and (max-width: 480px) {
 
 			#one .image.fit {
 				margin: 0 auto 2em auto;
+				max-width: 90%;
+			}
+
+			#one .image.fit.quote {
+				margin: 0 auto 0 auto;
 				max-width: 90%;
 			}
 
@@ -3329,3 +3398,141 @@
 				}
 
 		}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  text-align: center;
+  vertical-align: middle;
+  z-index: 1;
+  padding-top: 50px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: black;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  max-width: 1200px;
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  position: fixed;
+  top: 90px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+}
+	@media screen and (max-width: 980px) {
+		.close {
+			top: 45px;
+		}
+	}
+
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Hide the slides by default */
+.mySlides {
+  position: relative;
+  top: 10px;
+  display: none;
+}
+	@media screen and (max-width: 980px) {
+		.myslides {
+			top: 0px;
+		}
+	}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: relative;
+  /*top: 400px;*/
+  width: auto;
+  padding: 8px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+	@media screen and (max-width: 980px) {
+		.prev{
+			font-size: 13px;
+			margin-top: -20px;
+			padding: 2px;
+			display:none;
+		}
+
+		.next {
+			padding: 2px;
+		}
+	}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Caption text */
+.caption-container {
+  text-align: center;
+  vertical-align: middle;
+  background-color: black;
+  padding: 5px 5px 5px 0px;
+  color: white;
+}
+
+img.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+img.hover-shadow {
+  transition: 0.3s
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
